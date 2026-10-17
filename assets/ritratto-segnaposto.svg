@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" role="img" aria-label="Segnaposto: aggiungi il ritratto di Carlo Feola">
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#363432"/><stop offset="1" stop-color="#111821"/></linearGradient><linearGradient id="g" x1="0" x2="1"><stop stop-color="#c8ae89" stop-opacity=".08"/><stop offset="1" stop-color="#c8ae89" stop-opacity=".42"/></linearGradient></defs>
+  <rect width="640" height="800" fill="url(#bg)"/>
+  <g fill="none" stroke="#d7bb93" opacity=".27">
+    <path d="M-20 245Q270 125 700 210M-20 274Q270 154 700 239M-20 303Q270 183 700 268M-20 332Q270 212 700 297M-20 361Q270 241 700 326" stroke-width="2"/>
+  </g>
+  <circle cx="312" cy="322" r="135" fill="url(#g)" opacity=".36"/>
+  <g transform="translate(187 240)" fill="none" stroke="#d7bb93" stroke-width="5" opacity=".55">
+    <rect x="0" y="0" width="266" height="182" rx="5"/><path d="M38 0v182M76 0v182M114 0v182M152 0v182M190 0v182M228 0v182" stroke-width="2.4"/><path d="M23 0v98M62 0v98M100 0v98M176 0v98M214 0v98" stroke-width="23"/>
+  </g>
+  <text x="320" y="510" text-anchor="middle" font-family="Georgia,serif" font-size="28" fill="#f6e5d0" opacity=".8">FOTOGRAFIA UFFICIALE</text>
+  <text x="320" y="547" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" letter-spacing="3" fill="#d7bb93" opacity=".85">DA INSERIRE</text>
+</svg>

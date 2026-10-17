@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111821">
+  <meta name="description" content="Entra nel roster artistico di Carlo Feola. Casting dedicato a cantanti e musicisti per collaborazioni, eventi e produzioni dal vivo.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Casting artistico | Carlo Feola">
+  <meta property="og:description" content="Nuove voci, nuovi musicisti, nuove occasioni di incontro sul palco. Presenta la tua candidatura.">
+  <title>Carlo Feola — Casting artistico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --header-height: 82px;
+      --ink: #192027;
+      --night: #111821;
+      --night-soft: #19222c;
+      --cream: #f4f0e8;
+      --paper: #fffdf8;
+      --muted: #6e7578;
+      --gold: #b49362;
+      --gold-light: #dfc5a0;
+      --line: #e5e0d7;
+      --error: #a63835;
+      --success: #2c6a59;
+      --sans: "DM Sans", system-ui, -apple-system, Segoe UI, sans-serif;
+      --serif: "Playfair Display", Georgia, serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-height) + 20px); }
+    body { margin: 0; color: var(--ink); background: var(--cream); font-family: var(--sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    button, input, textarea { font: inherit; }
+    button { cursor: pointer; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+    ::selection { color: var(--night); background: var(--gold-light); }
+    .shell { width: min(1140px, calc(100% - 48px)); margin-inline: auto; }
+    .skip { position: absolute; z-index: 20; top: -100px; left: 10px; background: #fff; padding: 10px 14px; }
+    .skip:focus { top: 8px; }
+    .header { position: sticky; top: 0; z-index: 1000; background: var(--night); color: #fff; border-bottom: 1px solid rgba(255,255,255,.13); box-shadow: 0 4px 20px rgba(0,0,0,.12); }
+    .header-inner { height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 13px; text-decoration: none; min-width: 0; }
+    .brand-mark { width: 38px; height: 38px; display: grid; place-items: center; color: var(--gold-light); border: 1px solid rgba(223,197,160,.5); border-radius: 50%; flex-shrink: 0; }
+    .brand-monogram { font-family: var(--serif); font-weight: 600; font-size: 17px; letter-spacing: -.08em; line-height: 1; padding-right: 2px; }
+    .brand-type { display: flex; flex-direction: column; line-height: 1.2; }
+    .brand-type strong { font-size: 18px; font-weight: 600; letter-spacing: -.04em; }
+    .brand-type small { color: #c5b7a6; font-size: 9px; text-transform: uppercase; letter-spacing: .23em; margin-top: 4px; font-weight: 700; }
+    .nav { display: flex; align-items: center; gap: 30px; }
+    .nav a { color: #dedbd5; font-size: 13px; font-weight: 600; text-decoration: none; transition: color .2s ease; }
+    .nav a:hover { color: var(--gold-light); }
+    .nav .nav-cta { padding: 10px 18px; border: 1px solid var(--gold); color: var(--gold-light); border-radius: 2px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 13px; color: var(--gold-light); font-size: 11px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; display: inline-block; width: 26px; height: 1px; background: currentColor; }
+    .hero { background: var(--night); color: #fff; position: relative; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; width: 760px; height: 760px; border-radius: 50%; right: -315px; top: -350px; background: radial-gradient(circle,rgba(173,132,79,.12),transparent 65%); pointer-events: none; }
+    .hero-grid { min-height: 650px; display: grid; grid-template-columns: 1.03fr .97fr; gap: clamp(42px, 6vw, 88px); align-items: center; padding-block: 66px 90px; }
+    h1, h2, h3, p { margin-top: 0; }
+    .hero h1 { margin: 20px 0 28px; font-family: var(--serif); font-size: clamp(53px, 6vw, 87px); font-weight: 500; line-height: 1.12; letter-spacing: -.065em; }
+    .hero h1 em { font-style: normal; color: var(--gold-light); }
+    .hero .bio-heading { font-size: 13px; letter-spacing: .13em; text-transform: uppercase; color: #ebe1d4; font-weight: 700; margin: 0 0 12px; }
+    .hero .bio { color: #d0d0cf; max-width: 560px; font-size: 14px; line-height: 1.85; margin-bottom: 28px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 14px; padding: 16px 25px; border: 1px solid transparent; border-radius: 2px; text-decoration: none; font-weight: 700; font-size: 13px; letter-spacing: .03em; transition: transform .2s, background .2s, border-color .2s; }
+    .button:hover { transform: translateY(-2px); }
+    .button.primary { background: var(--gold-light); color: var(--night); }
+    .button.primary:hover { background: #efdbc0; }
+    .button.dark { background: var(--night); color: white; }
+    .button.dark:hover { background: #263340; }
+    .button svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .portrait-wrap { position: relative; max-width: 490px; width: 100%; justify-self: end; }
+    .portrait-wrap::before { content: ""; border: 1px solid rgba(219,186,141,.32); position: absolute; inset: -15px 17px 18px -16px; z-index: 0; pointer-events: none; }
+    .portrait { aspect-ratio: 4/5; position: relative; z-index: 1; overflow: hidden; background: #292b2d; }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 37% center; display: block; }
+    .portrait::after { content: ""; position: absolute; inset: 45% 0 0; pointer-events: none; background: linear-gradient(transparent,rgba(7,11,15,.65)); }
+    .portrait-caption { position: absolute; z-index: 2; bottom: 22px; left: 24px; right: 24px; display: flex; align-items: end; justify-content: space-between; gap: 10px; }
+    .portrait-caption strong { display: block; font-family: var(--serif); font-weight: 500; font-size: 27px; letter-spacing: -.03em; line-height: 1.1; }
+    .portrait-caption span { display: block; text-transform: uppercase; letter-spacing: .17em; font-weight: 600; color: #e8dcc9; font-size: 9px; margin-top: 8px; }
+    .portrait-caption .mini { font-size: 24px; color: var(--gold-light); font-family: var(--serif); }
+    .search-section { padding: 112px 0 120px; background: var(--cream); }
+    .search-grid { display: grid; grid-template-columns: 0.84fr 1.16fr; gap: min(10vw, 110px); }
+    .eyebrow.light { color: #8c6e47; }
+    .section-title { font-family: var(--serif); font-weight: 500; font-size: clamp(39px,4.3vw,59px); line-height: 1.16; letter-spacing: -.055em; margin: 22px 0; }
+    .search-lead { font-size: 17px; max-width: 600px; line-height: 1.9; color: #42484c; }
+    .search-copy { max-width: 620px; color: #666c70; font-size: 15px; line-height: 1.85; margin-bottom: 30px; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 10px; }
+    .pill { border: 1px solid #d6c9b8; border-radius: 90px; color: #554a3c; padding: 9px 14px; text-transform: uppercase; letter-spacing: .1em; font-size: 10px; font-weight: 700; }
+    .feature { padding: 25px 0; border-top: 1px solid #d8d3ca; display: flex; gap: 20px; align-items: flex-start; }
+    .feature:last-child { border-bottom: 1px solid #d8d3ca; }
+    .feature-index { font-size: 12px; color: #9b784b; min-width: 28px; padding-top: 5px; font-weight: 700; }
+    .feature h3 { font-size: 17px; margin: 0 0 6px; line-height: 1.4; font-weight: 700; }
+    .feature p { color: #707577; font-size: 14px; line-height: 1.65; margin: 0; }
+    .form-section { background: #eae4da; padding: 105px 0 124px; }
+    .form-layout { display: grid; grid-template-columns: .74fr 1.26fr; gap: 65px; align-items: start; }
+    .form-info { position: sticky; top: calc(var(--header-height) + 24px); }
+    .form-info .section-title { max-width: 380px; }
+    .form-info p { max-width: 350px; color: #62686a; font-size: 15px; line-height: 1.8; }
+    .form-aside { border-top: 1px solid #cfc5b8; margin-top: 35px; padding-top: 21px; color: #63676a; font-size: 13px; max-width: 340px; }
+    .form-aside strong { color: var(--ink); display: block; margin-bottom: 6px; }
+    .form-card { background: var(--paper); box-shadow: 0 20px 58px rgba(33,29,21,.07); border: 1px solid #e7e1d8; padding: clamp(23px,3.8vw,50px); border-radius: 3px; }
+    .form-header { border-bottom: 1px solid var(--line); padding-bottom: 26px; margin-bottom: 29px; }
+    .form-header h3 { font-family: var(--serif); font-weight: 500; letter-spacing: -.025em; font-size: 30px; margin: 0 0 6px; }
+    .form-header p { color: #767b7e; font-size: 12px; margin: 0; }
+    .form-header .asterisk { color: #995e35; font-weight: 700; }
+    .fields-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .field { display: flex; flex-direction: column; margin-bottom: 21px; min-width: 0; }
+    .field label, .group-label { display: block; color: #273037; font-size: 12px; font-weight: 700; margin: 0 0 9px; letter-spacing: .005em; }
+    .required-star { color: #a86b44; }
+    .optional { font-weight: 400; color: #879096; font-size: 11px; }
+    .field input, .field textarea { display: block; width: 100%; background: #fbfaf7; border: 1px solid #dcd8d0; border-radius: 2px; color: var(--ink); padding: 14px 15px; outline: none; transition: border-color .2s, box-shadow .2s; }
+    .field input { min-height: 50px; }
+    .field textarea { min-height: 132px; resize: vertical; }
+    .field input::placeholder, .field textarea::placeholder { color: #a1a4a5; }
+    .field input:focus, .field textarea:focus { border-color: #94754f; box-shadow: 0 0 0 3px rgba(180,147,98,.13); }
+    .field input[aria-invalid="true"], .field textarea[aria-invalid="true"] { border-color: var(--error); }
+    .field-help { display: block; font-size: 11px; color: #7a8082; margin-top: 7px; line-height: 1.5; }
+    fieldset { border: 0; padding: 0; margin: 1px 0 23px; min-width: 0; }
+    legend.group-label { padding: 0; }
+    .choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
+    .choice { display: flex; position: relative; align-items: center; gap: 11px; background: #fbfaf7; padding: 15px 15px; border: 1px solid #dcd8d0; border-radius: 2px; min-height: 56px; cursor: pointer; transition: background .2s,border-color .2s; }
+    .choice:has(input:checked) { border-color: #b49362; background: #f5ece0; }
+    .choice input { accent-color: #94734c; width: 17px; height: 17px; margin: 0; flex-shrink: 0; }
+    .choice span { font-size: 13px; font-weight: 600; }
+    .choice-grid[aria-invalid="true"] .choice { border-color: var(--error); }
+    .error-message { font-size: 12px; color: var(--error); min-height: 0; margin-top: 8px; }
+    .field-separator { height: 1px; background: var(--line); margin: 6px 0 27px; }
+    .links-container { display: flex; flex-direction: column; }
+    .link-row { display: flex; gap: 9px; align-items: flex-end; }
+    .link-row .field { flex: 1; margin-bottom: 15px; }
+    .remove-link { display: inline-flex; justify-content: center; align-items: center; height: 50px; min-width: 44px; margin-bottom: 15px; border: 1px solid #dcd8d0; background: #f9f6f0; color: #697179; border-radius: 2px; }
+    .remove-link:hover { border-color: var(--error); color: var(--error); }
+    .privacy-box { margin-top: 13px; padding: 20px 22px; background: #f5f1e9; border: 1px solid #e7dfd2; }
+    .privacy-title { color: #20292e; font-weight: 700; font-size: 12px; margin-bottom: 9px; }
+    .privacy-box p { margin: 0 0 14px; color: #6b7072; font-size: 11.5px; line-height: 1.85; }
+    .privacy-ack { display: flex; gap: 11px; align-items: flex-start; font-size: 12px; font-weight: 600; cursor: pointer; line-height: 1.6; }
+    .privacy-ack input { accent-color: #92734f; width: 17px; height: 17px; margin: 2px 0 0; flex-shrink: 0; }
+    .form-actions { margin-top: 25px; }
+    .submit-button { width: 100%; min-height: 56px; }
+    .form-note { color: #747a7d; font-size: 11px; text-align: center; line-height: 1.6; margin: 13px 0 0; }
+    .feedback { display: none; margin-top: 20px; padding: 16px 18px; border: 1px solid #a5bbaf; background: #eef5f0; color: #245644; border-radius: 2px; font-size: 13px; line-height: 1.7; }
+    .feedback.visible { display: block; }
+    .feedback.error { border-color: #d8abaa; background: #fcf3f1; color: #8e3633; }
+    .footer { background: var(--night); color: #fff; }
+    .footer-inner { min-height: 110px; display: flex; justify-content: space-between; align-items: center; gap: 18px; }
+    .footer strong { font-size: 15px; font-weight: 600; }
+    .footer-note { font-size: 12px; color: #bbc0c1; text-align: right; }
+    @media (max-width: 960px) {
+      .hero-grid { gap: 36px; min-height: 600px; }
+      .hero h1 { font-size: clamp(50px,5.6vw,70px); }
+      .form-layout { gap: 30px; grid-template-columns: .7fr 1.3fr; }
+      .form-card { padding: 30px; }
+    }
+    @media (max-width: 740px) {
+      .shell { width: min(100% - 34px, 560px); }
+      .header-inner { height: auto; min-height: 104px; flex-direction: column; justify-content: center; align-items: stretch; gap: 9px; padding-block: 10px; }
+      .brand { justify-content: center; }
+      .brand-mark { width: 33px; height: 33px; }
+      .brand-type strong { font-size: 16px; }
+      .brand-type small { font-size: 8px; margin-top: 3px; }
+      .nav { width: 100%; justify-content: center; gap: clamp(14px, 6vw, 28px); }
+      .nav a { display: inline-flex; align-items: center; font-size: 11px; }
+      .nav .nav-cta { font-size: 11px; padding: 6px 13px; }
+      .hero-grid { min-height: auto; }
+      .hero-grid, .search-grid, .form-layout { grid-template-columns: 1fr; }
+      .hero-grid { padding-block: 66px 72px; gap: 55px; }
+      .hero h1 { font-size: clamp(49px,10vw,68px); max-width: 490px; }
+      .hero .bio { font-size: 13.5px; }
+      .portrait-wrap { max-width: 450px; justify-self: center; width: calc(100% - 14px); }
+      .search-section { padding: 75px 0 84px; }
+      .search-grid { gap: 36px; }
+      .search-lead { font-size: 16px; }
+      .form-section { padding: 75px 0 86px; }
+      .form-layout { gap: 30px; }
+      .form-info { position: static; }
+      .form-info .section-title { margin: 16px 0; }
+      .form-aside { margin-top: 20px; padding-top: 14px; }
+      .footer-inner { padding-block: 27px; gap: 12px; }
+    }
+    @media (max-width: 440px) {
+      .fields-grid { grid-template-columns: 1fr; gap: 0; }
+      .form-card { padding: 22px 18px; }
+      .choice { padding: 12px 10px; }
+      .choice span { font-size: 12px; }
+      .portrait-caption strong { font-size: 23px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#contenuto">Vai al contenuto</a>
+  <header class="header">
+    <div class="shell header-inner">
+      <a class="brand" href="#chi-sono" aria-label="Carlo Feola, torna all'inizio">
+        <span class="brand-mark" aria-hidden="true"><span class="brand-monogram">CF</span></span>
+        <span class="brand-type"><strong>Carlo Feola</strong><small>Artist e Producer</small></span>
+      </a>
+      <nav class="nav" aria-label="Navigazione principale">
+        <a href="#chi-sono">Chi sono</a>
+        <a href="#chi-cerco">Chi cerco</a>
+        <a class="nav-cta" href="#candidatura">Candidati ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenuto">
+    <!-- SEZIONE 1 — CHI SONO -->
+    <section id="chi-sono" class="hero" aria-labelledby="hero-title">
+      <div class="shell hero-grid">
+        <div>
+          <span class="eyebrow">Casting artistico · Carlo Feola</span>
+          <h1 id="hero-title">Nuovi talenti.<br><em>Nuovi palchi.</em></h1>
+          <p class="bio-heading">Chi sono</p>
+          <p class="bio">Sono Carlo Feola, pianista, docente, tastierista e music consultant. Collaboro come professore d’orchestra con realtà sinfoniche italiane, tra cui l’Orchestra Sinfonica di Sanremo, l’Orchestra della Magna Grecia e l’Orchestra Sinfonica di Asti. Ho lavorato con artisti come Jimmy Sax, Serena Autieri e LDA e con direttori d’orchestra quali Enzo Campagnoli, Valeriano Chiaravalle e Stefano Palatresi. Oggi metto questa esperienza al servizio di nuove produzioni, eventi e collaborazioni artistiche.</p>
+          <a href="#chi-cerco" class="button primary">Scopri il casting
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="portrait-wrap">
+          <div class="portrait">
+            <!-- Fotografia originale fornita per la pagina, inclusa nel progetto. -->
+            <img id="carlo-portrait" src="/assets/carlo-feola.jpg" alt="Carlo Feola al pianoforte" width="2048" height="1366" decoding="async" fetchpriority="high">
+            <div class="portrait-caption">
+              <div><strong>Carlo Feola</strong><span>Pianista · Docente · Music Consultant</span></div>
+              <div class="mini" aria-hidden="true">CF.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEZIONE 2 — CHI CERCO -->
+    <section id="chi-cerco" class="search-section" aria-labelledby="who-title">
+      <div class="shell search-grid">
+        <div>
+          <span class="eyebrow light">01 / Chi cerco</span>
+          <h2 id="who-title" class="section-title">Il talento merita<br>di essere ascoltato.</h2>
+          <div class="pill-row" aria-label="Figure ricercate"><span class="pill">Cantanti</span><span class="pill">Musicisti</span><span class="pill">Performer</span></div>
+        </div>
+        <div>
+          <p class="search-lead"><strong>Seleziono cantanti e musicisti per ampliare il mio roster artistico.</strong></p>
+          <p class="search-copy">Cerco talenti con cui collaborare in concerti, kermesse ed eventi dal vivo. Valuto preparazione, identità artistica e attitudine al lavoro di squadra. La candidatura non garantisce un ingaggio.</p>
+          <div class="feature"><span class="feature-index">01.</span><div><h3>Identità artistica</h3><p>Mostrami il repertorio che ti rappresenta.</p></div></div>
+          <div class="feature"><span class="feature-index">02.</span><div><h3>Qualità dal vivo</h3><p>Musicalità, presenza scenica e lavoro di squadra.</p></div></div>
+          <div class="feature"><span class="feature-index">03.</span><div><h3>Collaborazioni future</h3><p>Nuove occasioni per eventi e produzioni musicali.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEZIONE 3 — MODULO CANDIDATURA -->
+    <section id="candidatura" class="form-section" aria-labelledby="form-title">
+      <div class="shell form-layout">
+        <div class="form-info">
+          <span class="eyebrow light">02 / La tua candidatura</span>
+          <h2 id="form-title" class="section-title">La tua musica<br>inizia da qui.</h2>
+          <p>Racconta il tuo percorso, condividi le tue performance e lascia i contatti per lo staff.</p>
+          <div class="form-aside"><strong>Prima di iniziare</strong>Prepara almeno un link accessibile alle tue esibizioni: audio, video o portfolio online.</div>
+        </div>
+        <div class="form-card">
+          <div class="form-header"><h3>Presenta la tua candidatura</h3><p>I campi contrassegnati da <span class="asterisk">*</span> sono obbligatori.</p></div>
+          <form id="casting-form" novalidate>
+            <!-- Honeypot anti-spam: va verificato anche lato server quando il backend sarà collegato. -->
+            <div aria-hidden="true" style="position:absolute;left:-9999px;height:0;overflow:hidden;"><label for="website-confirmation">Lascia questo campo vuoto</label><input id="website-confirmation" name="website_confirmation" type="text" tabindex="-1" autocomplete="off"></div>
+            <div class="fields-grid">
+              <div class="field"><label for="nome">Nome <span class="required-star">*</span></label><input id="nome" name="nome" type="text" autocomplete="given-name" maxlength="80" placeholder="Il tuo nome" required></div>
+              <div class="field"><label for="cognome">Cognome <span class="required-star">*</span></label><input id="cognome" name="cognome" type="text" autocomplete="family-name" maxlength="80" placeholder="Il tuo cognome" required></div>
+            </div>
+            <div class="field"><label for="nome-arte">Nome d'arte <span class="optional">(facoltativo)</span></label><input id="nome-arte" name="nome_arte" type="text" maxlength="120" placeholder="Come ti presenti sul palco"></div>
+
+            <fieldset id="artistic-roles" aria-describedby="roles-hint roles-error">
+              <legend class="group-label">Il tuo profilo artistico <span class="required-star">*</span></legend>
+              <div class="choice-grid" id="choice-grid">
+                <label class="choice"><input id="role-musicista" type="checkbox" name="ruolo" value="musicista"><span>Musicista</span></label>
+                <label class="choice"><input id="role-cantante" type="checkbox" name="ruolo" value="cantante"><span>Cantante</span></label>
+              </div>
+              <div class="field-help" id="roles-hint">Puoi selezionare entrambe le opzioni. È necessario sceglierne almeno una.</div>
+              <div class="error-message" id="roles-error" role="alert" aria-live="polite"></div>
+            </fieldset>
+            <div class="field"><label for="strumenti">Strumenti e competenze musicali <span class="optional">(facoltativo)</span></label><input id="strumenti" name="strumenti" type="text" maxlength="300" placeholder="Es. pianoforte, chitarra, basso, percussioni…"><small class="field-help">Se non suoni uno strumento, puoi lasciare vuoto questo campo.</small></div>
+            <div class="field-separator" aria-hidden="true"></div>
+
+            <div id="links-container" class="links-container" aria-label="Link alle tue performance">
+              <div class="link-row" data-link-row>
+                <div class="field"><label for="link-1">Portfolio artistico — link a una performance <span class="required-star">*</span></label><input id="link-1" name="link_1" type="url" inputmode="url" autocomplete="url" placeholder="https://" aria-describedby="link-help" required><small class="field-help" id="link-help">Inserisci un link audio o video. Compilandolo, apparirà un nuovo campo facoltativo.</small></div>
+              </div>
+            </div>
+            <div class="field"><label for="esperienze">Presentazione ed esperienze artistiche <span class="optional">(facoltativo)</span></label><textarea id="esperienze" name="esperienze" maxlength="3000" rows="5" placeholder="Descrivi il tuo percorso, le esibizioni più significative, la formazione e ciò che ti caratterizza artisticamente…"></textarea></div>
+            <div class="field-separator" aria-hidden="true"></div>
+            <div class="fields-grid">
+              <div class="field"><label for="email">Indirizzo e-mail <span class="required-star">*</span></label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="nome@esempio.it" required></div>
+              <div class="field"><label for="telefono">Recapito telefonico <span class="required-star">*</span></label><input id="telefono" name="telefono" type="tel" inputmode="tel" autocomplete="tel" maxlength="40" placeholder="Es. +39 333 123 4567" required></div>
+            </div>
+
+            <div class="privacy-box">
+              <div class="privacy-title">Informazioni sul trattamento dei dati personali</div>
+              <p>Ai sensi del Regolamento (UE) 2016/679 (GDPR), Carlo Feola tratterà i dati forniti esclusivamente per valutare la candidatura e ricontattarti nell'ambito di questo casting. I dati non saranno impiegati per finalità promozionali e saranno conservati per il tempo necessario alla gestione della selezione. Restano esercitabili i diritti previsti dagli articoli 15–22 del GDPR.</p>
+              <label class="privacy-ack" for="privacy-ack"><input id="privacy-ack" name="privacy_presa_visione" type="checkbox" value="true" required><span>Dichiaro di aver preso visione delle informazioni sul trattamento dei dati personali. <span class="required-star">*</span></span></label>
+            </div>
+            <div class="form-actions">
+              <button class="button dark submit-button" id="submit-button" type="submit">Invia candidatura
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+              <p class="form-note" id="sending-note">Dopo l’invio riceverai una conferma direttamente su questa pagina.</p>
+              <div class="feedback" id="form-feedback" role="status" aria-live="polite" tabindex="-1"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <strong>Carlo Feola</strong>
+      <div class="footer-note">Copyright © 2026 Carlo Feola</div>
+    </div>
+  </footer>
+  <script>
+    "use strict";
+    /*
+      Il modulo invia i dati a /api/casting sullo stesso dominio Vercel.
+      Password e chiavi riservate sono configurate solo come variabili sul server.
+    */
+    const API_ENDPOINT = "/api/casting";
+    let idInvioCorrente = null;
+    const form = document.getElementById("casting-form");
+    const linksContainer = document.getElementById("links-container");
+    const choices = [...document.querySelectorAll('input[name="ruolo"]')];
+    const grid = document.getElementById("choice-grid");
+    const roleError = document.getElementById("roles-error");
+    const feedback = document.getElementById("form-feedback");
+    const submitButton = document.getElementById("submit-button");
+
+    // La fotografia ufficiale è inclusa in /assets/carlo-feola.jpg.
+    const portrait = document.getElementById("carlo-portrait");
+    portrait.addEventListener("error", () => {
+      if (!portrait.dataset.fallback) {
+        portrait.dataset.fallback = "1";
+        portrait.src = "/assets/ritratto-segnaposto.svg";
+        portrait.alt = "Immagine temporaneamente non disponibile";
+      }
+    });
+
+    // Header sempre visibile e scroll degli ancoraggi centrato sul titolo della sezione.
+    const header = document.querySelector(".header");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    function refreshHeaderHeight() {
+      document.documentElement.style.setProperty("--header-height", `${Math.ceil(header.getBoundingClientRect().height)}px`);
+    }
+    refreshHeaderHeight();
+    window.addEventListener("resize", refreshHeaderHeight);
+    if ("ResizeObserver" in window) new ResizeObserver(refreshHeaderHeight).observe(header);
+
+    function scrollToSection(target, instant = false) {
+      refreshHeaderHeight();
+      const targetTitle = target.querySelector("h1, h2") || target;
+      const rect = targetTitle.getBoundingClientRect();
+      const headerHeight = header.getBoundingClientRect().height;
+      const availableHeight = Math.max(250, window.innerHeight - headerHeight);
+      const visualCenter = headerHeight + availableHeight * 0.4;
+      const titleCenter = rect.top + window.scrollY + rect.height / 2;
+      window.scrollTo({
+        top: Math.max(0, titleCenter - visualCenter),
+        behavior: instant || reducedMotion.matches ? "instant" : "smooth"
+      });
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener("click", event => {
+        const hash = link.getAttribute("href");
+        const target = document.getElementById(hash.slice(1));
+        if (!target) return;
+        event.preventDefault();
+        if (location.hash !== hash) history.pushState(null, "", hash);
+        scrollToSection(target);
+      });
+    });
+    window.addEventListener("popstate", () => {
+      const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (target) scrollToSection(target, true);
+    });
+    window.addEventListener("load", () => {
+      const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (target) scrollToSection(target, true);
+    }, { once: true });
+
+    function makeLinkRow(index) {
+      const row = document.createElement("div");
+      row.className = "link-row";
+      row.dataset.linkRow = "";
+      const field = document.createElement("div");
+      field.className = "field";
+      const label = document.createElement("label");
+      label.htmlFor = `link-${index}`;
+      label.textContent = `Link aggiuntivo ${index - 1} (facoltativo)`;
+      const input = document.createElement("input");
+      input.id = `link-${index}`;
+      input.name = `link_${index}`;
+      input.type = "url";
+      input.inputMode = "url";
+      input.placeholder = "https://";
+      input.autocomplete = "off";
+      const remove = document.createElement("button");
+      remove.type = "button";
+      remove.className = "remove-link";
+      remove.setAttribute("aria-label", `Rimuovi il link aggiuntivo ${index - 1}`);
+      remove.title = "Rimuovi questo campo";
+      remove.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>';
+      remove.addEventListener("click", () => { row.remove(); refreshLinkFields(); });
+      field.append(label, input);
+      row.append(field, remove);
+      return row;
+    }
+
+    function refreshLinkFields() {
+      // Mantiene automaticamente un singolo campo vuoto in fondo, ma solo dopo il primo link.
+      const rows = [...linksContainer.querySelectorAll("[data-link-row]")];
+      for (let i = rows.length - 1; i > 1; i--) {
+        const current = rows[i].querySelector("input");
+        const previous = rows[i - 1].querySelector("input");
+        if (!current.value.trim() && !previous.value.trim()) rows[i].remove();
+      }
+      const updated = [...linksContainer.querySelectorAll("[data-link-row]")];
+      if (updated.length < 8 && updated[updated.length - 1].querySelector("input").value.trim()) {
+        linksContainer.append(makeLinkRow(updated.length + 1));
+      }
+      // Riassegna etichette e ID dopo eventuali rimozioni.
+      [...linksContainer.querySelectorAll("[data-link-row]")].forEach((row, position) => {
+        const input = row.querySelector("input");
+        const label = row.querySelector("label");
+        input.id = `link-${position + 1}`;
+        input.name = `link_${position + 1}`;
+        label.htmlFor = input.id;
+        if (position > 0) {
+          label.textContent = `Link aggiuntivo ${position} (facoltativo)`;
+          row.querySelector("button").setAttribute("aria-label", `Rimuovi il link aggiuntivo ${position}`);
+        }
+      });
+    }
+    linksContainer.addEventListener("input", event => {
+      if (event.target.matches('input[type="url"]')) {
+        event.target.setCustomValidity("");
+        event.target.removeAttribute("aria-invalid");
+        refreshLinkFields();
+      }
+    });
+    choices.forEach(input => input.addEventListener("change", () => {
+      if (choices.some(choice => choice.checked)) {
+        grid.removeAttribute("aria-invalid");
+        roleError.textContent = "";
+      }
+    }));
+    form.querySelectorAll("input, textarea").forEach(field => {
+      field.addEventListener("input", () => { field.removeAttribute("aria-invalid"); field.setCustomValidity(""); });
+    });
+
+    function validateForm() {
+      roleError.textContent = "";
+      grid.removeAttribute("aria-invalid");
+      const roleMissing = !choices.some(choice => choice.checked);
+      if (roleMissing) {
+        grid.setAttribute("aria-invalid", "true");
+        roleError.textContent = "Seleziona almeno una categoria: Musicista e/o Cantante.";
+      }
+      const phone = document.getElementById("telefono");
+      phone.setCustomValidity("");
+      const phoneValue = phone.value.trim();
+      const phoneDigits = phoneValue.replace(/\D/g, "");
+      if (phoneValue && (!/^\+?[0-9\s().-]+$/.test(phoneValue) || phoneDigits.length < 7 || phoneDigits.length > 15)) {
+        phone.setCustomValidity("Inserisci un numero valido di 7-15 cifre, con eventuale prefisso internazionale.");
+      }
+      const urls = [...linksContainer.querySelectorAll('input[type="url"]')];
+      urls.forEach(field => {
+        field.setCustomValidity("");
+        const value = field.value.trim();
+        if (!value) return;
+        try {
+          const parsed = new URL(value);
+          if (!["http:","https:"].includes(parsed.protocol)) throw new Error("protocollo");
+        } catch {
+          field.setCustomValidity("Inserisci un URL completo che inizi con https:// o http://.");
+        }
+      });
+      const allInputs = [...form.querySelectorAll('input:not([type="hidden"]),textarea')];
+      const invalid = allInputs.find(field => !field.checkValidity());
+      if (invalid) {
+        invalid.setAttribute("aria-invalid", "true");
+        invalid.reportValidity();
+        invalid.focus();
+        return false;
+      }
+      if (roleMissing) { choices[0].focus(); return false; }
+      return true;
+    }
+
+    form.addEventListener("submit", async event => {
+      event.preventDefault();
+      feedback.classList.remove("visible", "error");
+      feedback.textContent = "";
+      if (!validateForm()) return;
+      if (!idInvioCorrente) idInvioCorrente = crypto.randomUUID();
+      const payload = {
+        id_candidatura: idInvioCorrente,
+        nome: document.getElementById("nome").value.trim(),
+        cognome: document.getElementById("cognome").value.trim(),
+        nome_arte: document.getElementById("nome-arte").value.trim(),
+        profilo_artistico: choices.filter(choice => choice.checked).map(choice => choice.value),
+        strumenti: document.getElementById("strumenti").value.trim(),
+        link_performance: [...linksContainer.querySelectorAll('input[type="url"]')].map(field => field.value.trim()).filter(Boolean),
+        presentazione_esperienze: document.getElementById("esperienze").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        telefono: document.getElementById("telefono").value.trim(),
+        privacy_presa_visione: document.getElementById("privacy-ack").checked,
+        website_confirmation: document.getElementById("website-confirmation").value,
+        origine: "carlofeola.it/casting"
+      };
+      submitButton.disabled = true;
+      submitButton.style.opacity = ".6";
+      try {
+        const response = await fetch(API_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok || result.ok !== true) throw new Error(result.error || "Invio non riuscito");
+        idInvioCorrente = null;
+        feedback.textContent = "Grazie! La tua candidatura è stata ricevuta. Lo staff ti contatterà in caso di interesse.";
+        feedback.classList.add("visible");
+        form.reset();
+        [...linksContainer.querySelectorAll("[data-link-row]")].slice(1).forEach(row => row.remove());
+      } catch {
+        feedback.textContent = "Non è stato possibile confermare l’invio. Riprova fra qualche minuto senza chiudere questa pagina.";
+        feedback.classList.add("visible", "error");
+      } finally {
+        submitButton.disabled = false;
+        submitButton.style.opacity = "";
+        feedback.focus();
+      }
+    });
+  </script>
+</body>
+</html>
